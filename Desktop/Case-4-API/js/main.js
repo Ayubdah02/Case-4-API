@@ -9,7 +9,24 @@ function handleSubmit(e) {
     //fetch("http://api.weatherstack.com/current?access_key=54dc97c856fa1d9792e80958d246f54b&query=" + query)
     fetch("data.json")
         .then((res) => res.json())
-        .then((json) => resultsEl.innerHTML += JSON.stringify(json))
+        .then((data) => {
+          const current = data.current;
+          const request = data.request;
+
+          const weatherHTML = `
+          <h2>Vädret i ${request.query}</h2>
+          <p>Temperatur: ${current.temperature}°C</p>
+          <p>Vindhastighet: ${current.wind_speed} km/h</p>
+          <p>Fuktighet: ${current.humidity}%</p>
+          `;
+
+          resultsEl.innerHTML = weatherHTML;
+            resultsEl.innerHTML += JSON.stringify(json)
+        
+        })
+
+
+
         .catch((error) => console.error(error))
 }
     
