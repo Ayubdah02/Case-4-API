@@ -14,17 +14,19 @@ function handleSubmit(e) {
           const request = data.request;
 
           const weatherHTML = `
+          <section class="weather-grid-box">
+          <figure class="weather-box-figure">
           <h2>Vädret i ${request.query}</h2>
           <p>Temperatur: ${current.temperature}°C</p>
           <p>Vindhastighet: ${current.wind_speed} km/h</p>
           <p>Fuktighet: ${current.humidity}%</p>
-          `;
+          </figure>
+          </section>`;
 
           resultsEl.innerHTML = weatherHTML;
             resultsEl.innerHTML += JSON.stringify(json)
         
         })
-
 
 
         .catch((error) => console.error(error))
