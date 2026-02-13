@@ -70,6 +70,18 @@ h1, h2, header{
   background-color: #2E2EAE;
 }
 
+.historybutton {
+  padding: 10px 20px;
+  border: none;
+  background-color: #003049;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.historybutton:hover {
+  background-color: #2E2EAE;
+}
+
 footer {
 margin-top: 18px;
 text-align: center;
